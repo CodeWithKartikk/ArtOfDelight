@@ -1,0 +1,933 @@
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+
+body {
+  font-family: $sans;
+}
+
+// MAIN HEADER
+
+header {
+  background: url("../img/main-bg.png") no-repeat center;
+  background-size: cover;
+  padding-bottom: 143px;
+
+  .head-wrapper {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0));
+    padding: 0 8%;
+  }
+
+  .logo {
+    margin-top: 5px;
+    float: left;
+
+    img {
+      display: block;
+    }
+  }
+
+  // Main navigation
+  nav {
+    .menu-button {
+      display: none;
+    }
+
+    ul {
+      float: right;
+    }
+
+    li {
+      float: left;
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+      display: block;
+      padding: 50px 15px;
+      font-family: $book;
+      font-size: 21px;
+      border-top: 2px solid transparent;
+
+      &:hover {
+        border-top: 2px solid $white;
+      }
+    }
+
+    // Social icons
+    .nav-socials {
+      float: right;
+    }
+
+    .fa {
+      text-decoration: none;
+      font-size: 21px;
+      color: $gold;
+      width: 20px;
+      overflow: hidden;
+      text-indent: 50px;
+      padding: 50px 8px;
+
+      &:before {
+        float: left;
+        text-indent: 0;
+      }
+    }
+
+    @include clearfix;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 90px;
+    color: $white;
+    font-family: $yes;
+    margin-top: 120px;
+  }
+
+  .button-container {
+    margin: 0 auto;
+    width: 230px * 2 + 30;
+    margin-top: 125px;
+    height: 60px;
+    position: relative;
+
+    &:before {
+      background: url("../img/divider.png");
+      @include divider(-75px, 232px, 43px);
+    }
+  }
+
+  button {
+    width: 230px;
+    height: 60px;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid $black;
+    color: $white;
+    font-size: 18px;
+    cursor: pointer;
+    float: left;
+
+    &:last-child {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: $white;
+      margin-left: 30px;
+    }
+
+    &:hover {
+      border-color: $gold;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $gold;
+    }
+
+    @include clearfix;
+  }
+}
+
+// CHEF SECTION
+
+#chef-section {
+  background: url("../img/dish-pattern.png");
+  padding: 70px 0 50px;
+  margin: 0 auto;
+  text-align: center;
+
+  .chef-wrapper {
+    display: inline-block;
+  }
+
+  .chef {
+    float: left;
+    width: 450px;
+
+    h2 {
+      font-size: 36px;
+      font-family: $yes;
+      color: $gold;
+    }
+
+    p {
+      margin: 78px 0 50px;
+      font-size: 16px;
+      line-height: 24px;
+      position: relative;
+
+      &:before {
+        background: url("../img/divider-g.png");
+        @include divider(-50px, 247px, 25px);
+      }
+    }
+
+    .chef-img {
+      position: relative;
+      left: 40px;
+    }
+  }
+
+  .dish {
+    float: left;
+  }
+
+  @include clearfix;
+}
+
+// INGREDIENTS SECTION
+
+#ingredients-section {
+  padding: 100px 10%;
+  background: url("../img/section-bg.png");
+  background-size: cover;
+
+  .ingredients-container {
+    width: 570px;
+    height: 560px;
+    box-sizing: border-box;
+    padding: 85px 60px 75px;
+    background: rgba(0,0,0,0.65);
+    text-align: center;
+    float: right;
+  }
+
+  h2 {
+    font-family: $yes;
+    font-size: 36px;
+    color: $white;
+  }
+
+  p {
+    margin-top: 70px;
+    color: $white;
+    line-height: 24px;
+    position: relative;
+
+    &:before {
+      background-image: url("../img/divider-s.png");
+      @include divider(-50px, 252px, 24px);
+    }
+  }
+
+  .img-wrapper {
+    margin: 65px 0 0;
+  }
+
+  .ingredient-img {
+    width: 100px;
+    height: 100px;
+    background: url("../img/images.png");
+    border-radius: 100px;
+    border: 5px solid gray - 70;
+    display: inline-block;
+    margin: 0 15px;
+
+    &:nth-child(2) {
+      background-position: 0 200px;
+    }
+
+    &:nth-child(3) {
+      background-position: 0 100px;
+    }
+  }
+  @include clearfix;
+}
+
+// MENU SECTION
+
+#menu-section {
+  padding: 100px 20px;
+  text-align: center;
+  background: url("../img/menu-pattern-s.png");
+
+  .menu-column {
+    display: inline-block;
+    vertical-align:top;
+    margin-right: 10%;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .menu-card {
+    width: 450px;
+    margin-bottom: 70px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h3 {
+    font-size: 36px;
+    font-family: $yes;
+    color: $gold;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  ul {
+    position: relative;
+
+    &:before {
+      background: url("../img/divider-g.png");
+      @include divider(-45px, 247px, 25px);
+    }
+  }
+
+  li {
+    line-height: 35px;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .special {
+    border: 1px solid rgba($gold, 0.6);
+    position: relative;
+
+    &:before {
+      content: "Special";
+      display: block;
+      position: absolute;
+      top: -20px;
+      right: -1px;
+      font-size: 14px;
+      color: $white;
+      line-height: 20px;
+      width: 60px;
+      height: 20px;
+      background-color: rgba($gold, 0.7);
+    }
+  }
+
+  h4 {
+    float: left;
+    font-size: 21px;
+    color: $gold;
+    font-family: $yes;
+  }
+
+  span {
+    font-size: 21px;
+    float: right;
+    font-family: $yes;
+    color: $gold;
+  }
+
+  p {
+    clear: both;
+    border-top: 1px solid rgba($gold, 0.4);
+  }
+}
+
+// REVIEWS SECTION
+
+#review-section {
+  background: url("../img/reviews-bg.png");
+  background-size: cover;
+  padding: 100px 0;
+  text-align: center;
+
+  .review-container {
+    width: 770px;
+    height: 550px;
+    display: inline-block;
+    padding: 75px 70px 100px;
+    box-sizing: border-box;
+    background: rgba($black, 0.8);
+  }
+
+  h2 {
+    font-size: 36px;
+    font-family: $yes;
+    color: $white;
+    margin-bottom: 75px;
+  }
+
+  blockquote {
+    position: relative;
+
+    &:before {
+      background: url("../img/divider-s.png");
+      @include divider(-50px, 252px, 24px);
+    }
+  }
+
+  p {
+    color: $white;
+    line-height: 45px;
+    font-size: 25px;
+    font-family: $book;
+    position: relative;
+
+    &:before {
+      color: #ccc - 30;
+      content: "\201C";
+      font-size: 96px;
+      font-family: georgia;
+      position: absolute;
+      left: -45px;
+      top: 10px;
+    }
+  }
+
+  footer {
+    color: $white;
+    margin-top: 45px;
+  }
+}
+
+// RESERVATION SECTION
+
+#reservation-section {
+  padding: 100px 0;
+  text-align: center;
+  background: url("../img/dish-pattern.png");
+
+  .reservation-images {
+    display: inline-block;
+    margin-right: 4%;
+  }
+
+  img {
+    display: inline-block;
+    margin-right: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .reservation-container {
+    display: inline-block;
+    vertical-align: top;
+    width: 435px;
+  }
+
+  h2 {
+    font-size: 36px;
+    font-family: $yes;
+    color: $gold;
+    margin-bottom: 65px;
+    position: relative;
+
+    &:after {
+      background: url("../img/divider-g.png");
+      @include divider(60px, 247px, 25px);
+    }
+  }
+
+  p {
+    padding: 10px 5px;
+    line-height: 24px;
+  }
+
+  form {
+    margin-top: 45px;
+  }
+
+  label {
+    text-align: left;
+    display: inline-block;
+    color: $gold;
+    font-weight: bold;
+    margin-right: 30px;
+
+    &:nth-child(even) {
+      margin-right: 0;
+    }
+  }
+
+  input {
+    display: block;
+    width: 200px;
+    height: 35px;
+    box-sizing: border-box;
+    padding: 4px 10px;
+    margin: 10px 0 25px 0;
+    font-size: 16px;
+
+    &:focus {
+      font-style: normal;
+      outline: none;
+      border: 1px solid $gold;
+    }
+  }
+
+  input {
+    border: 1px solid gray;
+  }
+
+  input[type="date"] {
+    background-color: $white;
+  }
+
+  button {
+    width: 200px;
+    height: 36px;
+    background-color: $gold;
+    border: none;
+    color: $white;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $gold + 15;
+      border: 1px solid $gold;
+    }
+  }
+}
+
+// FOOTER
+
+.main-footer {
+  background-color: #191919;
+  color: $white;
+  padding: 60px 0;
+  text-align: center;
+
+  .about-elem {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 40px;
+    width: 300px;
+
+    &:first-child {
+      width: 355px;
+      margin-left: 0;
+    }
+  }
+
+  h3 {
+    font-size: 21px;
+    font-family: $yes;
+    margin-bottom: 60px;
+  }
+
+  p {
+    line-height: 24px;
+    position: relative;
+
+    &:before {
+      background: url("../img/divider-s.png");
+      @include divider(-40px, 252px, 24px);
+    }
+  }
+
+  .developer-info {
+    font-size: 14px;
+    margin-top: 20px;
+
+    &:before {
+      display: none;
+    }
+
+    a {
+      color: #FFFFFF;
+    }
+  }
+
+  span {
+    font-weight: bold;
+  }
+
+  .payments {
+    margin-top: 50px;
+
+    li {
+      margin: 0 5px;
+      width: 40px;
+      overflow: hidden;
+      text-indent: 60px;
+
+      &:before {
+        font-size: 30px;
+        text-indent: 0;
+        float: left;
+      }
+    }
+  }
+
+  .footer-social {
+    margin-top: 50px;
+    display: inline-block;
+
+    li {
+      float: left;
+    }
+
+    .fa {
+      text-decoration: none;
+      margin: 0 7px;
+      width: 26px;
+      overflow: hidden;
+      text-indent: 60px;
+      color: $white;
+      font-size: 26px;
+
+      &:before {
+        text-indent: 1px;
+        text-align: center;
+        float: left;
+      }
+    }
+
+    .fa-facebook {
+      &:hover {
+        color: #3b5998;
+      }
+    }
+
+    .fa-youtube {
+      &:hover {
+        color: #e52d27;
+      }
+    }
+
+    .fa-twitter {
+      &:hover {
+        color: #55acee;
+      }
+    }
+
+    .fa-trello {
+      &:hover {
+        color: #0079bf
+      }
+    }
+  }
+}
+
+// MEDIA - TABLET - 1100PX
+
+@media all and (max-width: 1100px)  {
+  header {
+    background: url("../img/main-bg-m.png") no-repeat right;
+    background-size: cover;
+
+    .head-wrapper {
+      text-align: center;
+    }
+
+    .logo {
+      display: inline-block;
+      float: none;
+    }
+
+    .head-wrapper {
+      padding: 0;
+    }
+
+    nav {
+      margin-top: 10px;
+
+      ul {
+        display: block;
+        float: none;
+        background-color: rgba(0,0,0,0.2);
+      }
+
+      li {
+        display: inline-block;
+        margin: 20px 8px;
+        float: none;
+      }
+
+      a {
+        font-size: 21px;
+        padding: 15px 10px;
+        border: 0;
+
+        &:hover {
+          border-top: 0;
+          color: $gold + 40;
+        }
+      }
+
+      ol {
+        position: absolute;
+        right: 20px;
+        top: -20px;
+      }
+    }
+
+    h1 {
+      margin-top: 100px;
+      font-size: 70px;
+    }
+  }
+
+  #chef-section {
+    .dish {
+      display: none;
+    }
+  }
+
+  #ingredients-section {
+    background: url("../img/section-bg-m.png") center;
+    background-size: cover;
+
+    .ingredients-container {
+      float: none;
+      margin: 0 auto;
+      max-width: 570px;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  #menu-section {
+    .menu-column {
+      display: block;
+      margin-right: 0;
+      margin-bottom: 100px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .menu-card {
+      margin: 100px auto;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  #review-section {
+    background: url("../img/reviews-bg-m.png");
+    background-size: cover;
+
+    .review-container {
+      max-width: 770px;
+      width: 80%;
+      height: auto;
+      padding: 50px 70px;
+    }
+
+    p {
+      font-size: 21px;
+    }
+  }
+
+  #reservation-section {
+    .reservation-images {
+      display: none;
+    }
+  }
+
+  .main-footer {
+    .about-elem {
+      margin: 20px;
+
+      &:first-child {
+        display: block;
+        margin: 0 auto 50px;
+      }
+    }
+  }
+}
+
+// MEDIA - MOBILE - 720PX
+
+@media all and (max-width: 720px) {
+  header {
+    background: url("../img/main-bg-s.png") no-repeat right;
+    background-size: cover;
+    padding-bottom: 80px;
+
+    nav {
+      margin-top: 0;
+      top: 0;
+      position: absolute;
+      z-index: 100;
+      width: 100%;
+      position: fixed;
+
+      &.bg {
+        background-color: rgba($menu, 0.95);
+      }
+
+      .menu-button {
+        display: block;
+        height: 35px;
+        cursor: pointer;
+      }
+
+      .fa {
+        border-radius: 5px;
+        background-color: rgba($menu, 0.5);
+        color: #000000;
+        width: 30px;
+        font-size: 36px;
+        padding: 5px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+
+      ul {
+        padding: 0 60px 0;
+        background-color: transparent;
+        display: none;
+        border-bottom: 1px solid $menu - 40;
+
+        &.visible {
+          display: block;
+        }
+      }
+
+      li {
+        border-bottom: 1px solid $menu - 30;
+        display: block;
+        margin: 0;
+
+        &:last-of-type {
+          border-bottom: none;
+        }
+      }
+
+      a {
+        padding: 15px;
+        color: black;
+      }
+
+      ol {
+        display: none;
+      }
+    }
+
+    h1 {
+      margin-top: 70px;
+      font-size: 50px;
+    }
+
+    .button-container {
+      text-align: center;
+      height: auto;
+      width: auto;
+    }
+
+    button {
+      display: block;
+      margin: 0 auto;
+      float: none;
+
+      &:last-child {
+        margin: 20px auto 0;
+      }
+    }
+  }
+
+  #chef-section {
+    .chef {
+      width: auto;
+      max-width: 450px;
+      padding: 0 10px;
+
+      .chef-img {
+        left: 20px;
+      }
+    }
+  }
+
+  #ingredients-section {
+    background: url("../img/section-bg-s.png") left;
+    background-size: cover;
+    padding: 100px 0;
+
+    .ingredients-container {
+      width: 95%;
+      padding: 40px 20px;
+    }
+
+    .ingredient-img {
+      margin: 0 5px;
+    }
+
+    .img-wrapper {
+      margin-top: 30px;
+    }
+  }
+
+  #menu-section {
+    .menu-card {
+      max-width: 450px;
+      width: auto;
+    }
+  }
+
+  #review-section {
+    background: url("../img/reviews-bg-s.png") center;
+    background-size: cover;
+
+    .review-container {
+      width: 95%;
+      padding: 50px 50px;
+    }
+
+    p {
+      &:before {
+        left: -40px;
+        font-size: 70px;
+      }
+    }
+  }
+
+  #reservation-section {
+    padding: 100px 10px;
+
+    .reservation-container {
+      max-width: 435px;
+      width: 100%;
+    }
+
+    h2 {
+      &:after {
+        top: 90px;
+      }
+    }
+
+    label {
+      margin: 0 auto;
+      padding: 5px;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+    }
+  }
+
+  .main-footer {
+    .about-elem {
+      padding: 0 10px;
+      display: block;
+      margin: 0 auto 90px;
+      max-width: 300px;
+      width: auto;
+
+      &:first-child {
+        margin: 0 auto 90px;
+        max-width: 355px;
+        width: auto;
+      }
+
+      &:last-child {
+        margin: 0 auto;
+      }
+    }
+
+    .payments {
+      margin-top: 20px;
+    }
+  }
+}
